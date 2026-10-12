@@ -4,14 +4,19 @@ using TicTacToe;
 
 UIManager ui = new UIManager();
 GameBoardManager manager = new GameBoardManager();
+
 const int BOARDSIZE = 9;
 
-int player = 1;
 int[] position = new int[BOARDSIZE];
+int player = 1;
 int turns = 1;
+int gameMode = 1;
 
 int[] playerA = new int[5];
 int[] playerB = new int[5];
+
+ui.PrintLobby();                                                                                                                                                                                
+
 
 while (true)
 {
@@ -35,6 +40,7 @@ while (true)
         break;
     }
 
+    // 사용자 입력 처리
     do
     {
         Console.Write("위치를 선택하세요 (1~9): ");
@@ -69,7 +75,7 @@ while (true)
 
     } while (!isValidInput);
 
-    // 직전에 입력받은 값 턴 수에 따라 각 플레이어의 입력값 저장하는 배열에 저장
+    // 직전 입력값 각 플레이어의 배열에 나눠 저장
     if (player == 1)
     {
         playerA[(turns - 1) / 2] = position[turns - 1];
@@ -98,6 +104,7 @@ while (true)
         Console.WriteLine("종료하려면 Enter를 누르세요.");
         Console.ReadKey(true);
     }
+
     // 플레이 턴 수 증가
     turns++;
 }

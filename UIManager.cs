@@ -1,10 +1,17 @@
 ﻿namespace TicTacToe
 {
+    // UI 출력 담당
     class UIManager
     {
 
         private char[] markersOnGrid = { '.', '.', '.', '.', '.', '.', '.', '.', '.' };
 
+        public void PrintLobby()
+        {
+            Console.WriteLine("게임 모드를 선택하시오.");
+            Console.WriteLine("1. 두 사람 대전");
+            Console.WriteLine("2. 컴퓨터 대전");
+        }
         public void PrintMessages(int player, int position, int difficulty = 1)
         {
             Console.Clear();
