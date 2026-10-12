@@ -4,18 +4,19 @@ using TicTacToe;
 
 UIManager ui = new UIManager();
 GameBoardManager manager = new GameBoardManager();
+BotBrain bot = new BotBrain();
 
 const int BOARDSIZE = 9;
 
 int[] position = new int[BOARDSIZE];
 int player = 1;
 int turns = 1;
-int gameMode = 1;
 
 int[] playerA = new int[5];
 int[] playerB = new int[5];
 
-ui.PrintLobby();                                                                                                                                                                                
+ui.PrintLobby();
+bot.SetGamemode(int.Parse(Console.ReadLine()));
 
 
 while (true)
